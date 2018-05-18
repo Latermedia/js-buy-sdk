@@ -3,7 +3,9 @@ export const defaultErrors = [{message: 'an unknown error has occured.'}];
 export default function defaultResolver(path) {
   const keys = path.split('.');
 
-  return function({model, errors}) {
+  return function(response) {
+    const {model, errors} =  response;
+
     return new Promise((resolve, reject) => {
       try {
         const result = keys.reduce((ref, key) => {
@@ -13,7 +15,7 @@ export default function defaultResolver(path) {
         resolve(result);
       } catch (_) {
         if (errors) {
-          reject(errors);
+          reject(response);
         } else {
           reject(defaultErrors);
         }
