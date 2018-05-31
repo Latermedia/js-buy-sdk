@@ -3023,7 +3023,7 @@ graphql-js-client@0.7.0:
 
 graphql-js-client@Latermedia/graphql-js-client.git#feature/handle-non-json-response:
   version "0.9.2"
-  resolved "https://codeload.github.com/Latermedia/graphql-js-client/tar.gz/a9ec5366487121fa07f85f611f48fdf380a784c3"
+  resolved "https://codeload.github.com/Latermedia/graphql-js-client/tar.gz/89b1bbcb25c52caf9824728d8db0caff5ffb25c5"
 
 graphql-js-schema-fetch@1.1.2:
   version "1.1.2"
