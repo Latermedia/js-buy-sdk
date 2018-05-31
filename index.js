@@ -1845,19 +1845,47 @@ function httpFetcher(url) {
         Accept: 'application/json'
       }, options.headers)
     })).then(function (response) {
-      return response.json().then(function (responseJSON) {
-        var hasError = !!responseJSON.errors;
-        if (hasError) {
-          return {
-            status: response.status,
-            errors: responseJSON.errors
-          };
-        }
+      var contentType = response.headers.get('content-type');
 
-        return responseJSON;
-      });
+      if (contentType === 'application/json') {
+        return _handleJSONResponse(response);
+      }
+
+      return _handleTextResponse(response);
     });
   };
+}
+
+function _handleJSONResponse(response) {
+  return response.json().then(function (responseJSON) {
+    var hasError = Boolean(responseJSON.errors);
+
+    if (hasError) {
+      return {
+        status: response.status,
+        errors: responseJSON.errors,
+        hasError: true
+      };
+    }
+
+    return responseJSON;
+  });
+}
+
+function _handleTextResponse(response) {
+  return response.text().then(function (responseText) {
+    var hasError = !response.ok;
+
+    if (hasError) {
+      return {
+        status: response.status,
+        errors: responseText,
+        hasError: true
+      };
+    }
+
+    return { data: responseText };
+  });
 }
 
 function hasNextPage(paginatedModels) {
@@ -2279,7 +2307,7 @@ function defaultResolver(path) {
 
   return function (response) {
     var model = response.model,
-        errors = response.errors;
+        hasError = response.hasError;
 
 
     return new Promise(function (resolve, reject) {
@@ -2290,7 +2318,7 @@ function defaultResolver(path) {
 
         resolve(result);
       } catch (_) {
-        if (errors) {
+        if (hasError) {
           reject(response);
         } else {
           reject(defaultErrors);

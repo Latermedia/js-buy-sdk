@@ -3021,9 +3021,9 @@ graphql-js-client@0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/graphql-js-client/-/graphql-js-client-0.7.0.tgz#6d6006680c4e6eaf2e4d284d430b0fae687de154"
 
-graphql-js-client@Latermedia/graphql-js-client.git#feature/error-status-codes:
+graphql-js-client@Latermedia/graphql-js-client.git#feature/handle-non-json-response:
   version "0.9.2"
-  resolved "https://codeload.github.com/Latermedia/graphql-js-client/tar.gz/abfdd0419a167f9ca04be1f94196823f34556e16"
+  resolved "https://codeload.github.com/Latermedia/graphql-js-client/tar.gz/a9ec5366487121fa07f85f611f48fdf380a784c3"
 
 graphql-js-schema-fetch@1.1.2:
   version "1.1.2"

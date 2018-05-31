@@ -4,7 +4,7 @@ export default function defaultResolver(path) {
   const keys = path.split('.');
 
   return function(response) {
-    const {model, errors} =  response;
+    const {model, hasError} = response;
 
     return new Promise((resolve, reject) => {
       try {
@@ -14,7 +14,7 @@ export default function defaultResolver(path) {
 
         resolve(result);
       } catch (_) {
-        if (errors) {
+        if (hasError) {
           reject(response);
         } else {
           reject(defaultErrors);
