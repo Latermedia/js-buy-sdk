@@ -29,7 +29,7 @@ class CollectionResource extends Resource {
   fetchAll(first = 20) {
     return this.graphQLClient
       .send(collectionConnectionQuery, {first})
-      .then(defaultResolver('shop.collections'));
+      .then(defaultResolver('collections'));
   }
 
   /**
@@ -45,7 +45,7 @@ class CollectionResource extends Resource {
   fetchAllWithProducts({first = 20, productsFirst = 20} = {}) {
     return this.graphQLClient
       .send(collectionConnectionWithProductsQuery, {first, productsFirst})
-      .then(defaultResolver('shop.collections'))
+      .then(defaultResolver('collections'))
       .then(paginateCollectionsProductConnectionsAndResolve(this.graphQLClient));
   }
 
@@ -78,9 +78,9 @@ class CollectionResource extends Resource {
    * @param {String} id The id of the collection to fetch.
    * @return {Promise|GraphModel} A promise resolving with a `GraphModel` of the collection.
    */
-  fetchWithProducts(id) {
+  fetchWithProducts(id, {productsFirst = 20} = {}) {
     return this.graphQLClient
-      .send(collectionNodeWithProductsQuery, {id})
+      .send(collectionNodeWithProductsQuery, {id, productsFirst})
       .then(defaultResolver('node'))
       .then(paginateCollectionsProductConnectionsAndResolve(this.graphQLClient));
   }
@@ -99,7 +99,7 @@ class CollectionResource extends Resource {
   fetchByHandle(handle) {
     return this.graphQLClient
       .send(collectionByHandleQuery, {handle})
-      .then(defaultResolver('shop.collectionByHandle'));
+      .then(defaultResolver('collectionByHandle'));
   }
 
   /**
@@ -124,7 +124,7 @@ class CollectionResource extends Resource {
       sortKey,
       query,
       reverse
-    }).then(defaultResolver('shop.collections'));
+    }).then(defaultResolver('collections'));
   }
 }
 export default CollectionResource;

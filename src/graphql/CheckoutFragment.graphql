@@ -14,7 +14,7 @@ fragment MailingAddressFragment on MailingAddress {
   province
   zip
   name
-  countryCode
+  countryCode: countryCodeV2
   provinceCode
 }
 
@@ -24,23 +24,62 @@ fragment CheckoutFragment on Checkout {
   requiresShipping
   note
   paymentDue
+  paymentDueV2 {
+    amount
+    currencyCode
+  }
   webUrl
   orderStatusUrl
   taxExempt
   taxesIncluded
   currencyCode
   totalTax
+  totalTaxV2 {
+    amount
+    currencyCode
+  }
+  lineItemsSubtotalPrice {
+    amount
+    currencyCode
+  }
   subtotalPrice
+  subtotalPriceV2 {
+    amount
+    currencyCode
+  }
   totalPrice
+  totalPriceV2 {
+    amount
+    currencyCode
+  }
   completedAt
   createdAt
   updatedAt
+  email
+  discountApplications(first: 10) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    edges {
+      node {
+        ...DiscountApplicationFragment
+      }
+    }
+  }
+  appliedGiftCards {
+    ...AppliedGiftCardFragment
+  }
   shippingAddress {
     ...MailingAddressFragment
   }
   shippingLine {
     handle
     price
+    priceV2 {
+      amount
+      currencyCode
+    }
     title
   }
   customAttributes {
@@ -52,11 +91,31 @@ fragment CheckoutFragment on Checkout {
     processedAt
     orderNumber
     subtotalPrice
+    subtotalPriceV2 {
+      amount
+      currencyCode
+    }
     totalShippingPrice
+    totalShippingPriceV2 {
+      amount
+      currencyCode
+    }
     totalTax
+    totalTaxV2 {
+      amount
+      currencyCode
+    }
     totalPrice
+    totalPriceV2 {
+      amount
+      currencyCode
+    }
     currencyCode
     totalRefunded
+    totalRefundedV2 {
+      amount
+      currencyCode
+    }
     customerUrl
     shippingAddress {
       ...MailingAddressFragment
@@ -99,6 +158,15 @@ fragment CheckoutFragment on Checkout {
         customAttributes {
           key
           value
+        }
+        discountAllocations {
+          allocatedAmount {
+            amount
+            currencyCode
+          }
+          discountApplication {
+            ...DiscountApplicationFragment
+          }
         }
       }
     }

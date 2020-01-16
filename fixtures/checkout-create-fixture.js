@@ -1,6 +1,7 @@
 export default {
   "data": {
     "checkoutCreate": {
+      "checkoutUserErrors": [],
       "userErrors": [],
       "checkout": {
         "id": "Z2lkOi8vc2hvcGlmeS9DaGVja291dC9lM2JkNzFmNzI0OGM4MDZmMzM3MjVhNTNlMzM5MzFlZj9rZXk9NDcwOTJlNDQ4NTI5MDY4ZDFiZTUyZTUwNTE2MDNhZjg=",
@@ -19,6 +20,7 @@ export default {
                   "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8yOTEwNjA2NDU4NA==",
                   "title": "Awesome Copper Bench",
                   "price": "64.99",
+                  "compareAtPrice": null,
                   "weight": 4.5,
                   "image": null,
                   "selectedOptions": [
@@ -26,7 +28,24 @@ export default {
                       "name": "Color or something",
                       "value": "Awesome Copper Bench"
                     }
-                  ]
+                  ],
+                  "presentmentPrices": {
+                    "pageInfo": {
+                      "hasNextPage": false,
+                      "hasPreviousPage": false
+                    },
+                    "edges": [
+                      {
+                        "node": {
+                          "price": {
+                            "amount": "64.99",
+                            "currencyCode": "USD"
+                          },
+                          "compareAtPrice": null
+                        }
+                      }
+                    ]
+                  }
                 },
                 "quantity": 5,
                 "customAttributes": []
@@ -69,6 +88,10 @@ export default {
         "taxesIncluded": false,
         "currencyCode": "CAD",
         "totalTax": "42.24",
+        "lineItemsSubtotalPrice": {
+          "amount": "324.95",
+          "currencyCode": "CAD"
+        },
         "subtotalPrice": "324.95",
         "totalPrice": "367.19",
         "completedAt": null,

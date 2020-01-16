@@ -3,6 +3,7 @@ export default {
     "node": {
       "__typename": "Product",
       "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=",
+      "availableForSale": true,
       "createdAt": "2016-09-25T21:31:33Z",
       "updatedAt": "2017-03-29T15:25:32Z",
       "descriptionHtml": "send me this cat",
@@ -11,9 +12,6 @@ export default {
       "productType": "cat",
       "title": "Cat",
       "vendor": "sendmecats",
-      "tags": [
-        "vintage"
-      ],
       "publishedAt": "2017-01-12T19:44:42Z",
       "options": [
         {
@@ -87,6 +85,14 @@ export default {
               "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=",
               "title": "Fluffy / Medium",
               "price": "0.00",
+              "priceV2": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "compareAtPriceV2": {
+                "amount": "5.00",
+                "currencyCode": "CAD"
+              },
               "weight": 18,
               "image": {
                 "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=",
@@ -102,7 +108,18 @@ export default {
                   "name": "Size",
                   "value": "Medium"
                 }
-              ]
+              ],
+              "unitPrice": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "unitPriceMeasurement": {
+                "measuredType": "VOLUME",
+                "quantityUnit": "ML",
+                "quantityValue": 5.0,
+                "referenceUnit": "ML",
+                "referenceValue": 1
+              }
             }
           },
           {
@@ -111,6 +128,14 @@ export default {
               "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=",
               "title": "Extra Fluffy / Small",
               "price": "0.00",
+              "priceV2": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "compareAtPriceV2": {
+                "amount": "5.00",
+                "currencyCode": "CAD"
+              },
               "weight": 18,
               "image": {
                 "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=",
@@ -126,7 +151,15 @@ export default {
                   "name": "Size",
                   "value": "Small"
                 }
-              ]
+              ],
+              "unitPrice": null,
+              "unitPriceMeasurement": {
+                "measuredType": null,
+                "quantityUnit": null,
+                "quantityValue": 0.0,
+                "referenceUnit": null,
+                "referenceValue": 0
+              }
             }
           },
           {
@@ -135,6 +168,14 @@ export default {
               "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=",
               "title": "Mega Fluff / Large",
               "price": "0.00",
+              "priceV2": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "compareAtPriceV2": {
+                "amount": "5.00",
+                "currencyCode": "CAD"
+              },
               "weight": 0,
               "image": {
                 "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=",
@@ -150,7 +191,15 @@ export default {
                   "name": "Size",
                   "value": "Large"
                 }
-              ]
+              ],
+              "unitPrice": null,
+              "unitPriceMeasurement": {
+                "measuredType": null,
+                "quantityUnit": null,
+                "quantityValue": 0.0,
+                "referenceUnit": null,
+                "referenceValue": 0
+              }
             }
           }
         ]

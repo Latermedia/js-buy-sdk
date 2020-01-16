@@ -39,13 +39,21 @@ class Client {
    * @param {Config} config An instance of {@link Config} used to configure the Client.
    */
   constructor(config, GraphQLClientClass = GraphQLJSClient, fetchFunction) {
-    const url = `https://${config.domain}/api/graphql`;
+    const url = `https://${config.domain}/api/${config.apiVersion}/graphql`;
 
     const headers = {
       'X-SDK-Variant': 'javascript',
       'X-SDK-Version': version,
       'X-Shopify-Storefront-Access-Token': config.storefrontAccessToken
     };
+
+    if (config.source) {
+      headers['X-SDK-Variant-Source'] = config.source;
+    }
+
+    if (config.language) {
+      headers['Accept-Language'] = config.language;
+    }
 
     if (fetchFunction) {
       headers['Content-Type'] = 'application/json';

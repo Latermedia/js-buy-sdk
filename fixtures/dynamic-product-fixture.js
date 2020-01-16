@@ -52,7 +52,23 @@ export default {
             "node": {
               "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTgyMTc4NTk3MjA=",
               "price": "0.00",
-              "weight": 18
+              "priceV2": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "compareAtPriceV2": {
+                "amount": "5.00",
+                "currencyCode": "CAD"
+              },
+              "weight": 18,
+              "unitPrice": null,
+              "unitPriceMeasurement": {
+                "measuredType": null,
+                "quantityUnit": null,
+                "quantityValue": 0.0,
+                "referenceUnit": null,
+                "referenceValue": 0
+              }
             }
           },
           {
@@ -60,7 +76,26 @@ export default {
             "node": {
               "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTk4OTI3ODM1NjA=",
               "price": "0.00",
-              "weight": 18
+              "priceV2": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "compareAtPriceV2": {
+                "amount": "5.00",
+                "currencyCode": "CAD"
+              },
+              "weight": 18,
+              "unitPrice": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "unitPriceMeasurement": {
+                "measuredType": "VOLUME",
+                "quantityUnit": "ML",
+                "quantityValue": 5.0,
+                "referenceUnit": "ML",
+                "referenceValue": 1
+              }
             }
           },
           {
@@ -68,7 +103,23 @@ export default {
             "node": {
               "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTk4OTI4MjkzODQ=",
               "price": "0.00",
-              "weight": 0
+              "priceV2": {
+                "amount": "0.00",
+                "currencyCode": "CAD"
+              },
+              "compareAtPriceV2": {
+                "amount": "5.00",
+                "currencyCode": "CAD"
+              },
+              "weight": 0,
+              "unitPrice": null,
+              "unitPriceMeasurement": {
+                "measuredType": null,
+                "quantityUnit": null,
+                "quantityValue": 0.0,
+                "referenceUnit": null,
+                "referenceValue": 0
+              }
             }
           }
         ]

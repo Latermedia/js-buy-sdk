@@ -1,9 +1,8 @@
 export default {
    "data":{
       "checkoutLineItemsUpdate":{
-         "userErrors":[
-
-         ],
+         "userErrors":[],
+         "checkoutUserErrors": [],
          "checkout":{
             "id":"Z2lkOi8vc2hvcGlmeS9DaGVja291dC9lM2JkNzFmNzI0OGM4MDZmMzM3MjVhNTNlMzM5MzFlZj9rZXk9NDcwOTJlNDQ4NTI5MDY4ZDFiZTUyZTUwNTE2MDNhZjg=",
             "ready":true,
@@ -22,6 +21,7 @@ export default {
                            "id":"Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8yOTEwNjA2NDU4NA==",
                            "title":"Black / 8",
                            "price":"188.00",
+                           "compareAtPrice":"190.00",
                            "weight":0,
                            "image": {
                               "id":"Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTgyMTc3OTA2NjQ=",
@@ -37,7 +37,27 @@ export default {
                                  "name":"Size",
                                  "value":"8"
                               }
-                           ]
+                           ],
+                           "presentmentPrices": {
+                              "pageInfo": {
+                                "hasNextPage": false,
+                                "hasPreviousPage": false
+                              },
+                              "edges": [
+                                {
+                                  "node": {
+                                    "price": {
+                                      "amount": "188.00",
+                                      "currencyCode": "USD"
+                                    },
+                                    "compareAtPrice": {
+                                      "amount": "190.00",
+                                      "currencyCode": "USD"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
                         },
                         "quantity":2,
                         "customAttributes":[
@@ -62,6 +82,10 @@ export default {
             "taxesIncluded":false,
             "currencyCode":"CAD",
             "totalTax":"0.00",
+            "lineItemsSubtotalPrice": {
+              "amount": "376.00",
+              "currencyCode": "CAD"
+            },
             "subtotalPrice":"376.00",
             "totalPrice":"376.00",
             "completedAt":null,
